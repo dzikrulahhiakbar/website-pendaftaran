@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Website Pendaftaran</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="wrapper">
+
+    <header class="header">
+        <h1>Website Pendaftaran</h1>
+        <p>Selamat datang di website kami</p>
+    </header>
+
+    <nav class="nav">
+        <a href="#" class="active">Home</a>
+        <a href="#">Daftar</a>
+        <a href="#">Kontak</a>
+    </nav>
+
+    <div class="container">
+
+        <section class="content">
+            <h2>Form Pendaftaran</h2>
+
+            <p>Silakan isi form pendaftaran dengan data yang benar.</p>
+
+            <form id="formPendaftaran">
+
+                <label>Nama</label>
+                <input type="text" id="nama" placeholder="Masukkan nama">
+                <small id="errorNama"></small>
+
+                <label>Jenis Kelamin</label>
+                <input type="radio" name="jk" value="Laki-laki"> Laki-laki<br>
+                <input type="radio" name="jk" value="Perempuan"> Perempuan
+                <small id="errorJK"></small>
+
+                <label>Hobi</label>
+                <input type="checkbox" value="Menyanyi"> Menyanyi<br>
+                <input type="checkbox" value="Menari"> Menari<br>
+                <input type="checkbox" value="Menggambar"> Menggambar
+                <small id="errorHobi"></small>
+
+                <label>Jurusan</label>
+                <select id="jurusan">
+                    <option value="">--- Pilih Jurusan ---</option>
+                    <option>Seni Musik</option>
+                    <option>Ilmu Komunikasi</option>
+                    <option>Ilmu Komputer</option>
+                </select>
+                <small id="errorJurusan"></small>
+
+                <br><br>
+                <button type="submit">Kirim</button>
+
+            </form>
+
+            <div id="hasil"></div>
+
+            <h3>Riwayat Pendaftaran</h3>
+            
+            <label>Cari Nama</label>
+            <input
+                type="text"
+                id="searchNama"
+                placeholder="Ketik nama pendaftar...">
+
+            <label>Filter Jurusan</label>
+            <select id="filterJurusan">
+                <option value="">Semua Jurusan</option>
+                <option>Seni Musik</option>
+                <option>Ilmu Komunikasi</option>
+                <option>Ilmu Komputer</option>
+            </select>
+
+            <table id="tabelData">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>JK</th>
+                        <th>Hobi</th>
+                        <th>Jurusan</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <aside class="sidebar">
+            <p><strong>Info:</strong></p>
+            <p>Pendaftaran dibuka sampai 30 Januari</p>
+        </aside>
+
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 Website Pendaftaran</p>
+    </footer>
+
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
