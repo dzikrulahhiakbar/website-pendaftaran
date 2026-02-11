@@ -4,6 +4,7 @@ const jurusan = document.getElementById("jurusan");
 const hasil = document.getElementById("hasil");
 const searchNama = document.getElementById("searchNama");
 const filterJurusan = document.getElementById("filterJurusan");
+const emptyState = document.getElementById("emptyState");
 
 const errorNama = document.getElementById("errorNama");
 const errorJK = document.getElementById("errorJK");
@@ -29,15 +30,15 @@ function renderTabel() {
     const keywoard = searchNama.value.toLowerCase();
     const jurusanFilter = filterJurusan.value;
 
+    let tampil = 0;
+
     dataPendaftar.forEach((data, index) => {
 
-        if (!data.nama.toLowerCase().includes(keywoard)) {
-            return;
-        }
+        if (!data.nama.toLowerCase().includes(keywoard)) return;
 
-        if (jurusanFilter !== "" && data.jurusan !== jurusanFilter) {
-            return;
-        }
+        if (jurusanFilter !== "" && data.jurusan !== jurusanFilter) return;
+
+        tampil++;
 
         tbody.innerHTML += `
             <tr>
@@ -57,12 +58,17 @@ function renderTabel() {
             </tr>
         `;
     });
+
+    emptyState.style.display = tampil === 0 ? "block" : "none";
 }
 
 // ========================
 // HAPUS DATA
 // ========================
 function hapusData(index) {
+    const yakin = confirm("Yakin mau hapus data ini?");
+    if (!yakin) return;
+
     dataPendaftar.splice(index, 1);
     localStorage.setItem(
         "pendaftaran",
@@ -114,6 +120,7 @@ form.addEventListener("submit", function (e) {
 
     renderTabel();
 
+    nama.focus();
     form.reset();
 });
 
