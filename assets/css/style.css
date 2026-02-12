@@ -267,3 +267,55 @@ tr:nth-child(even) {
         margin: 6px;
     }
 }
+
+/* Dark Mode */
+.theme-btn {
+    margin-top: 15px;
+    background: white;
+    color: red;
+    box-shadow: none;
+}
+
+.theme-btn:hover {
+    transform: none;
+}
+
+body {
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Global Dark */
+body.dark-mode {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+/* Content & Sidebar */
+body.dark-mode .content,
+body.dark-mode .sidebar {
+    background: #1e1e1e;
+    color: #f1f1f1;
+    
+}
+
+/* Table */
+body.dark-mode th {
+    background: #333;
+}
+
+body.dark-mode tr:nth-child(even) {
+    background: #222;
+}
+
+/* Form */
+body.dark-mode input,
+body.dark-mode select {
+    background: #2a2a2a;
+    color: white;
+    border: 1px solid #444;
+}
+
+/* Foter */
+body.dark-mode .footer {
+    background: #000;
+}
