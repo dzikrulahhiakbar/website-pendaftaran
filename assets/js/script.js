@@ -5,6 +5,7 @@ const hasil = document.getElementById("hasil");
 const searchNama = document.getElementById("searchNama");
 const filterJurusan = document.getElementById("filterJurusan");
 const emptyState = document.getElementById("emptyState");
+const themeToggle = document.getElementById("themeToggle");
 
 const errorNama = document.getElementById("errorNama");
 const errorJK = document.getElementById("errorJK");
@@ -152,4 +153,22 @@ searchNama.addEventListener("input", function () {
 
 filterJurusan.addEventListener("change", function () {
     renderTabel();
+})
+
+// Dark Mode
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    themeToggle.textContent = "Light Mode";
+}
+
+themeToggle.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+        themeToggle.textContent = "Light Mode";
+    } else {
+        localStorage.setItem("theme", "light");
+        themeToggle.textContent = "Dark Mode"; 
+    }
 })
